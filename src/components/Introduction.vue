@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <section class="">
+        <section class="section">
             <div class="columns is-centered">
                 <div class="column is-three-quarters">
                     <article class="content">

@@ -1,11 +1,5 @@
 <template>
-    <div class="container">
-        <article v-if="message" class="message is-info">
-            <div class="message-body">
-                {{ message }}
-            </div>
-        </article>
-
+    <div class="container section">
         <loading v-if="loading"></loading>
         <div v-else-if="lottery">
             <article v-if="lottery.message" class="message is-info">
@@ -68,6 +62,12 @@
                             </button>
                         </div>
                     </nav>
+
+                    <article v-if="message" class="message is-info">
+                        <div class="message-body">
+                            {{ message }}
+                        </div>
+                    </article>
                 </div>
                 <div class="column">
                     <nav v-if="lottery.reward.length > 0" class="panel">
