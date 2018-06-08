@@ -259,8 +259,6 @@
                         }
                     })
 
-                    console.log(address_summation)
-
                     return result
                 }
 
