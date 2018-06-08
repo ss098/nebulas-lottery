@@ -62,8 +62,8 @@
         data: function () {
             return {
                 nebpay: new nebpayjs(),
-                nebpay_address: "https://testnet.nebulas.io",
-                contract_address: "n1g7PAvrRAdJT7YZcFZpG62UGuy1k2twGoK"
+                nebpay_address: "https://mainnet.nebulas.io",
+                contract_address: "n1py9gBwfJn9iV3VufNay5bR9imEUkjqmNM"
             }
         }
     }
