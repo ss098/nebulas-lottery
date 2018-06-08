@@ -72,13 +72,13 @@
                 <div class="column">
                     <nav v-if="lottery.reward.length > 0" class="panel">
                         <p class="panel-heading">
+                            <span class="icon">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                            </span>
                             参与者
                         </p>
 
                         <div v-for="(detail, join_address) in lottery.join_address" :class="{'panel-block': true, 'is-active': join_address === address}">
-                            <span class="panel-icon">
-                                <i class="fas fa-map-marker" aria-hidden="true"></i>
-                            </span>
                             <div class="content">
                                 <p>钱包地址： {{ join_address }}</p>
                                 <p>交易哈希： {{ detail.hash }}</p>
@@ -96,7 +96,7 @@
 
                         <div v-if="Object.keys(lottery.join_address).length <= 0" class="panel-block">
                             <span class="panel-icon">
-                                <i class="fas fa-users" aria-hidden="true"></i>
+                                <i class="fas fa-user-friends" aria-hidden="true"></i>
                             </span>
 
                             还没有人参与抽奖，赶快加入吧
@@ -104,7 +104,7 @@
                     </nav>
 
                     <p v-if="Object.keys(lottery.join_address).length < lottery.count">
-                        参与人数足够后才能开奖，本页面自动刷新。
+                        参与人数足够后才能开奖，将页面链接发给朋友邀请他参与抽奖，参与后本页面自动更新。
                     </p>
                 </div>
             </div>
@@ -228,11 +228,18 @@
                     const address = Object.keys(join_address)
 
                     let address_summation = address.map((address) => {
+
                         const hash = join_address[address].hash
                         let summation = 0
 
                         for (let i = 0; i < hash.length; i++) {
-                            summation += parseInt(hash[i], 16)
+                            const hash_number = parseInt(hash[i], 16)
+
+                            if (i % 2 === 0) {
+                                summation += hash_number
+                            } else {
+                                summation -= hash_number
+                            }
                         }
 
                         return {
@@ -252,7 +259,7 @@
                         }
                     })
 
-                    console.log(result)
+                    console.log(address_summation)
 
                     return result
                 }
