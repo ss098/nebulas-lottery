@@ -15,3 +15,7 @@
 最终的抽奖结果来自去中心化的智能合约（Smart Contract）所公开在区块链上的数据（如交易哈希，Transaction Hash）进行组合运算（也可以自定义算法），同样的输入数据使用同一种算法得到的抽奖结果相同，所有人都可以在本地离线验算抽奖结果。
 
 而与抽奖相关的所有代码都是开源的，这样就可以得到使所有参与者信服抽奖结果，在技术上满足了**年会抽奖**、**购车摇号**等场景。
+
+## 说明
+
+在使用抽奖之前，需要安装仅支持 Chrome 的 Nebulas Web 扩展钱包（[https://github.com/ChengOrangeJu/WebExtensionWallet](https://github.com/ChengOrangeJu/WebExtensionWallet)）。
